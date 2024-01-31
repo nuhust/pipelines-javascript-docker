@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nuhustpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nuhustpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: nuhustpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: nuhustpipelinesjavascriptdocker 
+          image: nuhusacr.azurecr.io/nuhustpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
