@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Automatic-Deploy
+  labels:
+    app: Automatic-Deploy
+  namespace: namespace-workflow-1706676874417
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Automatic-Deploy
+  template:
+    metadata:
+      labels:
+        app: Automatic-Deploy
+    spec:
+      containers:
+        - name: Automatic-Deploy
+          image: nuhusacr.azurecr.io/image-workflow-1706676874417:latest
+          ports:
+            - containerPort: 3000
